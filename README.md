@@ -1,2 +1,2 @@
-# ecommerce_rails
-Desenvolvimento de um Ecommerce
+# Desenvolvimento de um ecommerce Ruby on Rails
+
