@@ -7,13 +7,14 @@ Rails.application.configure do
 
   #better errors
   BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
-  # BetterErrors::Middleware.allow_ip! '172.17.0.0/16'
+  #BetterErrors::Middleware.allow_ip! '172.17.0.0/16'
 
   #webconsole Rails
-  config.web_console.whitelisted_ips = ENV['TRUSTED_IP']
+  # config.web_console.whitelisted_ips = ENV['TRUSTED_IP']
+  config.web_console.whitelisted_ips = '172.17.0.0/16'
 
   #devise config
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host:'localhost', port: 9000 }
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development

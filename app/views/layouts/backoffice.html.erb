@@ -10,18 +10,38 @@
 
       <title>BackOffice - EscamboApp</title>
 
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-      <%= stylesheet_link_tag    'backoffice', media: 'all', 'data-turbolinks-track' => true %>
+      <%= stylesheet_link_tag    'application', media: 'all' %>
+      <%= stylesheet_link_tag    'backoffice', media: 'all' %>
 
-      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-      <%= javascript_include_tag 'backoffice', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_include_tag 'backoffice' %>
       <%= csrf_meta_tags %>
 
   </head>
   <body>
     <div id="wrapper">
       <%= render :partial => "layouts/backoffice_shared/navigation" %>
-      <%= yield %>
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                      <%= yield %>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
     </div>
+
+    <% if notice %>
+      <script type="text/javascript">
+        $.notify("<%= notice %>","success");
+      </script>
+    <% end %>
+
   </body>
 </html>

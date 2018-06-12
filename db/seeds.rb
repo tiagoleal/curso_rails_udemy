@@ -21,3 +21,8 @@ categories.each do |category|
   Category.find_or_create_by!(description: category)
 end
 puts "CATEGORIAS cadastradas com sucesso!"
+
+#########################
+puts "Cadastrando Administrador Padrao...."
+Admin.create!(name:"Admin" ,email:"admin@admin.com",password:"123456", password_confirmation:"123456", role:0)
+puts "ADMINISTRADOR cadastraddo com sucesso!"
