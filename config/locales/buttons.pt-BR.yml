@@ -1,0 +1,14 @@
+'pt-BR':
+  buttons:
+    new: Novo
+    show: Mostrar
+    edit: Editar
+    save: Salvar
+    destroy: Apagar
+    back: Voltar
+    home: Início
+    close: Fechar
+    send: Enviar
+    send_message: Enviar Mensagem
+    search: Pesquisar
+

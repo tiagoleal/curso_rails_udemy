@@ -1,8 +1,12 @@
 class Admin < ActiveRecord::Base
+  #Constants
+  ROLES = {:full_access => 0, :restricted_access =>1}
 
-  enum role: [:full_access, :restricted_access]
+  #enums
+  enum role: ROLES
 
-  scope :with_full_access, -> { where(role: 'full_access') }
+  scope :with_full_access, -> { where(role: ROLES[:full_access]) }
+  scope :with_restricted_access, -> { where(role: ROLES[:restricted_access]) }
 
   # def self.with_full_access
   #   where(role: 'full_access')
@@ -13,11 +17,4 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  	def role_br
-	  	if self.role == 'full_access'
-	  		'Acesso Completo'
-	  	else
-	  		'Acesso Restrito'
-	  	end
-  	end
 end
