@@ -43,5 +43,11 @@
       </script>
     <% end %>
 
+    <% if alert %>
+      <script type="text/javascript">
+        $.notify("<%= alert %>","error");
+      </script>
+    <% end %>
+
   </body>
 </html>
